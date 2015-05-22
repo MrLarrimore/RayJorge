@@ -1,4 +1,4 @@
-game.NewProfile = me.ScreenObject.extend({
+game.newProfile = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
@@ -22,13 +22,11 @@ game.NewProfile = me.ScreenObject.extend({
                     },
                     
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "PICK A USERNAME AND PASSWORD", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "Create an Account to ssave Progress", this.pos.x, this.pos.y);
                     }
                     
                    
-                           })));   
-                           
-                    
+                     })));                
                     
                     },
 	
@@ -41,5 +39,10 @@ game.NewProfile = me.ScreenObject.extend({
             document.getElementById("register").style.visibility = "hidden";
 	}
 });
+
+
+
+
+
 
 

@@ -1,4 +1,4 @@
-game.SpendExp = me.ScreenObject.extend({
+game.spendExp = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
@@ -66,8 +66,5 @@ game.SpendExp = me.ScreenObject.extend({
                 me.event.unsubscribe(this.handler);
 	}
 });
-
-
-
 
 

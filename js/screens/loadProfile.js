@@ -23,7 +23,7 @@ game.LoadProfile = me.ScreenObject.extend({
                     },
                     
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "Create an Account To save Your Progress", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "ENTER YOUR USERNAME AND PASSWORD", this.pos.x, this.pos.y);
                     }
                     
                    
@@ -42,4 +42,5 @@ game.LoadProfile = me.ScreenObject.extend({
             document.getElementById("load").style.visibility = "hidden";
 	}
 });
+
 
