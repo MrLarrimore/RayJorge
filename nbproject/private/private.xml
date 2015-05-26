@@ -5,7 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/RayJorge/index.php</file>
             <file>file:/C:/xampp/htdocs/RayJorge/js/screens/title.js</file>
+            <file>file:/C:/xampp/htdocs/RayJorge/js/screens/spendExp.js</file>
             <file>file:/C:/xampp/htdocs/RayJorge/js/entities/entities.js</file>
+            <file>file:/C:/xampp/htdocs/RayJorge/js/screens/play.js</file>
         </group>
     </open-files>
 </project-private>
