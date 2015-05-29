@@ -5,14 +5,35 @@ var game = {
 	// an object where to store game information
 	data : {
 		// score
-		score : 0
+		score : 0,
+                option1: "",
+                option2: "",
+                playerHealth: 10,
+                playerMoveSpeed: 6,
+                gameTimerManager: "",
+                heroDeathManager: "",
+                spearTimer: 0,
+                player: "",
+                exp: 0,
+                gold: 0,
+                exp1: 0,
+                exp2: 0,
+                exp3: 0,
+                exp4: 0,
+                win: "",
+                pausePos: "",
+                buyscreen: "",
+                buytext: ""
+                
+                
+                
 	},
 	
 	
 	// Run on page load.
 	"onload" : function () {
 	// Initialize the video.
-	if (!me.video.init("screen",  me.video.CANVAS, 480, 320, true, 'auto')) {
+	if (!me.video.init("screen",  me.video.CANVAS, 1067, 600, true, '1.0')) {
 		alert("Your browser does not support HTML5 canvas.");
 		return;
 	}
@@ -23,6 +44,12 @@ var game = {
 			me.plugin.register.defer(this, debugPanel, "debug");
 		});
 	}
+        
+        console.log(game.data.exp + " game");
+
+        me.state.SPENDEXP = 112;
+        me.state.LOAD = 113;
+        me.state.NEW = 114;
 
 	// Initialize the audio.
 	me.audio.init("mp3,ogg");
@@ -39,10 +66,19 @@ var game = {
 
 	// Run on game resources loaded.
 	"loaded" : function () {
+                me.pool.register("player", game.PlayerEntity, true);
+                me.pool.register("GameTimerManager", game.GameTimerManager);
+                me.pool.register("HeroDeathManager", game.HeroDeathManager);
+                me.pool.register("ExperienceManager", game.ExperienceManager);
+                
 		me.state.set(me.state.MENU, new game.TitleScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
+                me.state.set(me.state.SPENDEXP, new game.SpendExp());
+                me.state.set(me.state.LOAD, new game.LoadProfile());
+                me.state.set(me.state.NEW, new game.NewProfile());
 
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
 	}
 };
+
